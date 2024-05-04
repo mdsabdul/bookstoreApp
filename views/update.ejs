@@ -1,0 +1,21 @@
+<%- include("./partials/header")%>
+
+    <h2 class=" p-3 bg-primary-subtle ">UPDATE YOUR BOOKSTORE</h2>
+    <form action="/update/<%= book._id%>" method="post" class=" px-4 py-3" enctype="multipart/form-data">
+   
+        <div class="mb-4"><img width="10%" height="100px" src="/images/<%=book.image%>" alt=""></div>
+        <input type="file" name="image" id=""> <br> <br>
+        <input class="p-2 ms-0 border rounded-2 input input-outline-warning" type="text" name="name" placeholder="Bookname" value="<%=book.name%>"> <br>
+        <input type="hidden" name="oldimage" value="<%=book.image%>">
+        <input class="p-2 ms-0 mt-3  border rounded-2" type="text" name="author" placeholder="Authorname" value="<%=book.author%>" ><br>
+        <input class="p-2 ms-0  mt-3 border rounded-2" type="text" name="price" placeholder="Bookprice"  value="<%=book.price%>"><br>
+        <input class="p-2 ms-0  mt-3 border rounded-2" type="text" name="quantity" placeholder="Quantity" value="<%=book.quantity%>"><br>
+        <input class="p-2 ms-0  mt-3 border rounded-2" type="text" name="category" placeholder="Categry"value="<%=book.category%>" ><br>
+        <textarea class="ps-2 ms-0  mt-3 border rounded-2"   name="description" id="" cols="24" rows="4" 
+            placeholder="Enter text here ----"><%= book.description%></textarea> <br>
+        <button class="px-3 py-2 ms-0 mt-3 border rounded-5 border-info "> Update book </button>
+
+    </form>
+    <a class="position-absolute top-0 end-0 p-2" href="/">Back to Homepage</a>
+
+    <%- include("./partials/footer")%>

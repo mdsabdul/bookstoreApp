@@ -1,0 +1,17 @@
+<%- include("./partials/header")%>
+
+<h2 class=" p-3 bg-primary-subtle ">Create Your Bookstore</h2>
+<form action="/file/create" method="post" class=" px-4 py-3 position-relative" enctype="multipart/form-data">
+    <input  type="file" name="image" > <br> <br>
+    <input class="p-2 ms-0 " type="text" name="name" placeholder="Bookname" > <br>
+    <input class="p-2 ms-0 mt-3 " type="text" name="author" placeholder="Authorname" ><br>
+    <input class="p-2 ms-0  mt-3" type="text" name="price" placeholder="Bookprice" ><br>
+    <input class="p-2 ms-0  mt-3" type="text" name="quantity" placeholder="Quantity" ><br>
+    <input class="p-2 ms-0  mt-3 " type="text" name="category" placeholder="Categry" ><br>
+    <textarea class="ps-2 ms-0  mt-3 text-wrap position-relative" name="description" id="" cols="30" rows="8" placeholder="Enter text here ----"></textarea> <br >
+    <button class="px-3 py-2 ms-0 mt-3 border rounded-5 border-info ">Add book</button>
+   
+</form>
+<a class="position-absolute top-0 end-0 p-2" href="/">Back to Homepage</a>
+
+<%- include("./partials/footer")%>
