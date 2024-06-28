@@ -39,7 +39,7 @@ router.post('/file/create',upload,async function (req, res, next) {
 
 
   try{
-    const newBook = BOOKS({...req.body,image:req.file.filename})
+    const newBook =await BOOKS({...req.body,image:req.file.filename})
       await newBook.save();
     res.redirect("/library")
   } catch (err) {
