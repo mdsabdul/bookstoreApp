@@ -1,5 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
 <%- include("./partials/header")%>
 <%- include("./partials/nav")%>
 
-<h1 class="fs-1 text-center">Bookstore Homepage</h1>
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+    <h1 class="fs-1 text-center text-uppercase">Welcome to book library</h1>
+    <p class="fs-4 pt-4 text-white text-center text-uppercase">Here you can store and manage your books</p>
+    <p class="fs-4 pt-4 text-warning text-center text-uppercase">
+        <img class="img-fluid" src="/images/school-girl-with-books-png.webp" alt="School girl with books" style="max-height: 30vw;">
+    </p>
+</div>
+
 <%- include("./partials/footer")%>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

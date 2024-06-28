@@ -1,21 +1,37 @@
+
 <%- include("./partials/header")%>
 
-    <h2 class=" p-3 bg-primary-subtle ">UPDATE YOUR BOOKSTORE</h2>
-    <form action="/update/<%= book._id%>" method="post" class=" px-4 py-3" enctype="multipart/form-data">
-   
-        <div class="mb-4"><img width="10%" height="100px" src="/images/<%=book.image%>" alt=""></div>
-        <input type="file" name="image" id=""> <br> <br>
-        <input class="p-2 ms-0 border rounded-2 input input-outline-warning" type="text" name="name" placeholder="Bookname" value="<%=book.name%>"> <br>
-        <input type="hidden" name="oldimage" value="<%=book.image%>">
-        <input class="p-2 ms-0 mt-3  border rounded-2" type="text" name="author" placeholder="Authorname" value="<%=book.author%>" ><br>
-        <input class="p-2 ms-0  mt-3 border rounded-2" type="text" name="price" placeholder="Bookprice"  value="<%=book.price%>"><br>
-        <input class="p-2 ms-0  mt-3 border rounded-2" type="text" name="quantity" placeholder="Quantity" value="<%=book.quantity%>"><br>
-        <input class="p-2 ms-0  mt-3 border rounded-2" type="text" name="category" placeholder="Categry"value="<%=book.category%>" ><br>
-        <textarea class="ps-2 ms-0  mt-3 border rounded-2"   name="description" id="" cols="24" rows="4" 
-            placeholder="Enter text here ----"><%= book.description%></textarea> <br>
-        <button class="px-3 py-2 ms-0 mt-3 border rounded-5 border-info "> Update book </button>
-
+<h2 class="p-3 bg-primary-subtle text-center text-uppercase">Update Book</h2>
+<div class="container-fluid w-100 d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <form action="/update/<%= book._id %>" method="post" class="bg-dark text-light p-4 rounded" style="max-width: 600px; width: 100%;" enctype="multipart/form-data">
+        <div class="mb-4 text-center">
+            <img width="50%" height="100px" class="rounded-2" src="/images/<%= book.image %>" alt="">
+        </div>
+        <div class="form-group">
+            <input type="file" name="image" class="form-control mb-3">
+        </div>
+        <input type="hidden" name="oldimage" value="<%= book.image %>">
+        <div class="form-group">
+            <input class="form-control mb-3" type="text" name="name" placeholder="Bookname" value="<%= book.name %>">
+        </div>
+        <div class="form-group">
+            <input class="form-control mb-3" type="text" name="author" placeholder="Authorname" value="<%= book.author %>">
+        </div>
+        <div class="form-group">
+            <input class="form-control mb-3" type="text" name="price" placeholder="Bookprice" value="<%= book.price %>">
+        </div>
+        <div class="form-group">
+            <input class="form-control mb-3" type="text" name="quantity" placeholder="Quantity" value="<%= book.quantity %>">
+        </div>
+        <div class="form-group">
+            <input class="form-control mb-3" type="text" name="category" placeholder="Category" value="<%= book.category %>">
+        </div>
+        <div class="form-group">
+            <textarea class="form-control mb-3" name="description" cols="30" rows="4" placeholder="Enter text here ----"><%= book.description %></textarea>
+        </div>
+        <button type="submit" class="btn btn-info w-100">Update Book</button>
     </form>
-    <a class="position-absolute top-0 end-0 p-2" href="/">Back to Homepage</a>
+</div>
+<a class="position-absolute top-0 end-0 p-2" href="/">Back to Homepage</a>
 
-    <%- include("./partials/footer")%>
+<%- include("./partials/footer")%>
