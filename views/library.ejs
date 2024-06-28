@@ -1,23 +1,33 @@
 <%- include("./partials/header")%>
-<a class="p-2 fs-6 position-absolute top-0 end-0" href="/">Back to HomePage</a>
-<h1 class="p-2 fs-2 text-center text-uppercase">BOOK LIBRARY</h1>
+  <a class="p-2 fs-6 position-absolute top-0 end-0" href="/">Back to HomePage</a>
+  <h1 class="p-2 fs-2 text-center text-uppercase"> BOOK LIBRARY</h1>
 
-<div class="d-flex justify-content-center align-items-center flex-wrap bg-dark">
-    <% books.forEach((book, index) => { %>
-        <div class="mx-3 my-2 p-3 border rounded-4 border-warning text-light bg-dark position-relative" style="width: 100%; max-width: 270px;">
-            <img width="100%" style="height: 20vh" class="border rounded-2" src="/images/<%= book.image %>" alt="">
-            <p class="fw-bold">Book Name: <%= book.name %></p>
-            <p class="fw-bold">Book Author: <%= book.author %></p>
-            <p class="fw-bold">Book Price: <%= book.price %></p>
-            <p class="fw-bold">Book Quantity: <%= book.quantity %></p>
-            <p class="fw-bold">Book Category: <%= book.category %></p>
-            <p class="fw-bold">Book Description: <%= book.description %></p>
-            <div class="bottom-0 py-1 d-flex align-items-center justify-content-between">
-                <a class="text-danger" href="/delete/<%= book._id %>">Delete</a>
-                <a class="mx-4" href="/update/<%= book._id %>">Update</a>
+  <div class="d-flex justify-content-center align-items-center flex-wrap bg-dark  ">
+
+    <% books.forEach((book,index)=>{%>
+      <div class="mx-3 my-2 p-3 border rounded-4  border-warning text-light   bg-dark position-relative "  style="width:270px; "   >
+        <img width="100%" style="height: 20vh"  class="border rounded-2  " src="/images/<%= book.image %>" alt="">
+        <p class="fw-bold">Book Name : <%= book.name %>
+        </p>
+        <p class="fw-bold">Book Author : <%= book.author %>
+        </p>
+        <p class="fw-bold">Book Price : <%= book.price %>
+        </p>
+        <p class="fw-bold">Book Quantity : <%= book.quantity %>
+        </p>
+        <p class="fw-bold">Book Category : <%= book.category %>
+        </p>
+        <p class="fw-bold">Book Description : <%= book.description %>
+        </p>
+            <div class=" bottom-0 py-1 d-flex align-items-center justify-content-start gap-5">
+              <a class="text-danger" href="/delete/<%= book._id%>">Delete</a> 
+              <a class="mx-4" href="/update/<%= book._id%>">Update</a>
             </div>
-        </div>
-    <% }) %>
-</div>
+      </div>
+      <% })%>
 
-<%- include("./partials/footer")%>
+
+  </div>
+
+
+  <%- include("./partials/footer")%>

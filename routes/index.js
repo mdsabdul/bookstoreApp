@@ -4,7 +4,7 @@ const fs = require("fs")
 const path = require("path")
 const BOOKS = require("../model/bookModel");
 const { log } = require('console');
-const Books = [];
+// const Books = [];
 const upload = require("../utils/multer").single("image")
 // console.log(bookstore);
 /* GET home page. */
