@@ -4,10 +4,9 @@ const fs = require("fs")
 const path = require("path")
 const BOOKS = require("../model/bookModel");
 const { log } = require('console');
-// const Books = [];
+
 const upload = require("../utils/multer").single("image")
-// console.log(bookstore);
-/* GET home page. */
+
 router.get('/', function (req, res, next) {
   res.render('index')
 });
@@ -27,10 +26,7 @@ router.get('/library', async function (req, res, next) {
   } catch (error) {
     res.send(error)
   }
-  // BOOKS.find().then((books) => {
-  //   res.render("library", { books: books })
-  // }).catch((err) => res.send(err))
-  // res.render('library', { books: Books })
+
 
 });
 
@@ -39,24 +35,17 @@ router.get('/create', function (req, res, next) {
 });
 
 
-router.post('/file/create',upload, async function (req, res, next) {
+router.post('/file/create',upload,async function (req, res, next) {
 
 
   try{
-    const newBook =  BOOKS({...req.body,image:req.file.filename})
+    const newBook = BOOKS({...req.body,image:req.file.filename})
       await newBook.save();
     res.redirect("/library")
   } catch (err) {
     res.send(err)
   }
-    // res.json({ body: req.body, file: req.file })
 
-
-  // Books.push(req.body)
-  // res.redirect("/library")
-  // BOOKS.create(req.body).then(()=>{
-  //   res.redirect("/library")
-  // }).catch((err)=>res.send(err))
 
 });
 
@@ -68,9 +57,8 @@ router.get('/delete/:id', async function (req, res, next) {
   } catch (error) {
     res.send(error)
   }
-  // Books.splice(req.params.index, 1)
-  // res.redirect("/library")
-});
+
+})
 
 router.get('/update/:id', async function (req, res, next) {
   try {
@@ -79,9 +67,7 @@ router.get('/update/:id', async function (req, res, next) {
   } catch (error) {
     res.send(error)
   }
-  // const i = req.params.index //for storing index of  array
-  // const b = Books[i]    //for sotring value of arrayindex
-  // res.render("update", { book: b, index: i })
+
 });
 router.post('/update/:id', upload, async function (req, res, next) {
   try {
@@ -97,9 +83,7 @@ router.post('/update/:id', upload, async function (req, res, next) {
   } catch (error) {
     res.send(error)
   }
-  // const i = req.params.index  //for storing index of  array
-  // Books[i] = req.body
-  // res.redirect("/library")
+
 });
 
 module.exports = router;
